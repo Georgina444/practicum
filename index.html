@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="inner">
+            <div class="image-holder" onclick="triggerImageUpload()">
+                <img id="uploaded-image" src="img1.jpeg" alt="Uploaded Image">
+                <input type="file" id="image-upload" accept="image/*" onchange="previewImage(this)">
+            </div>
+            <form action="#">
+                <h3>Application form</h3>
+                <div class="form-group">
+                    <input type="text" name="firstName" placeholder="First Name" class="form-control" id="name" required>
+                    <input type="text" name="lastName" placeholder="Last Name" class="form-control" id="lastName" required>
+                </div>
+
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Email" class="form-control" id="email" required>
+                    <input name="facebookLink" placeholder="Facebook link" class="form-control" id="fbLink" required>
+                </div>
+
+                <div class="form-group2-wrapper">
+                    <div class="form-group2">
+                        <div class="date-input">
+                            <label for="dateOfBirth" class="birthdate-label">Birth date</label>
+                            <input type="date" name="dateOfBirth" placeholder="Date of Birth" class="birthdate-input" id="birthDate">
+                        </div>
+                        <div class="file-upload">
+                            <label class="cvLabel">Upload CV:</label>
+                            <label for="fileCV" class="form-button2"> 
+                                <span class="form-button" id="fileLabel">Upload file</span>
+                                <input type="file" id="fileCV" name="fileCV" style="display: none;" onchange="updateFileName(this)">
+                            </label>  
+                        </div>                                 
+                    </div>
+                </div>
+                
+
+
+                <div class="form-group">
+                    <select name="gender" id="gender" class="form-gender">
+                        <option value="" disabled selected>Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                    <input type="text" placeholder="Phone Number" id="phone" class="form-control">
+                </div>
+
+                <div class="form-button">
+                    <button type="submit" name="registerButton">Submit</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="questions-label">
+            <a href="faq.html" target="_blank">Frequently asked questions</a>
+        </div>
+        
+    </div>
+</body>
+
+
+<script>
+function updateFileName(input) {
+    const fileName = input.files[0].name;
+    document.getElementById('fileLabel').innerText = fileName;
+}
+
+function triggerImageUpload() {
+    document.getElementById('image-upload').click();
+}
+
+function previewImage(input) {
+    if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const uploadedImage = document.getElementById('uploaded-image');
+            uploadedImage.src = e.target.result;
+        };
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+</script>      
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="contactFormToEmail.js"></script>
+
+
+</html>

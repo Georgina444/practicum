@@ -1,0 +1,225 @@
+
+*{
+    box-sizing: border-box;
+}
+body{
+    background: url("backgroung4.jpeg");
+    background-size: cover;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    margin: 0;
+}
+input select, button{
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    font-size: 15px;
+}
+h1,h4{
+    margin: 0;
+}
+img{
+    max-width: 90%;
+}
+:focus{
+    outline: none;
+}
+.wrapper{
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.inner{
+    padding: 10px;
+    background: #fff;
+    max-width: 850px;
+    margin: auto;
+    display: flex;
+}
+.image-holder {
+    width: 415px; /* Set the width as needed */
+    height: 377px; /* Set the height as needed */
+    border: 1px; /* Optional: add a border for visualization */
+    overflow: hidden; /* Ensure images don't overflow the container */
+}
+
+.image-holder img {
+    width: 100%; /* Make the image fill its container */
+    height: 100%; /* Ensure the image fills the height proportionally */
+    object-fit: cover; /* Maintain aspect ratio and cover the entire container */
+}
+
+.inner form{
+    width: 50%;
+    padding-top: 36px;
+    padding-left: 45px;
+    padding-right: 45px;
+}
+.inner h3{
+    text-transform: uppercase;
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.form-group{
+    display:flex;
+    height: 40px;
+}
+.form-group input, select{
+    width: 50%;
+}
+.form-group input:first-child{
+    margin-right: 25px;
+}
+.form-wrapper{
+    position: relative;
+}
+.form-control{
+    border: 1px solid #333;
+    border: none;
+    border-bottom: 1px solid #333;
+    display: block;
+    width:100%; 
+    height: 30px;
+    padding-right: 0;
+    margin-bottom: 5px;
+}
+.form-gender{
+    width: 160px;
+    margin-right: 25px;
+    margin-top: 12px;
+}
+.select{
+    cursor:pointer;
+    color:gray;
+}
+select option[value=""][disabled]{
+    display:none;
+}
+
+.form-button {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+button{
+    border: none;
+    width: 120px;
+    height: 31px;
+    margin: auto;
+    margin-top: 20px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    font-size: 15px;
+}
+button:hover{
+    background-color:pink;
+}
+@media(max-width:767px){
+    .inner{
+        display: block;
+    }
+.inner.image-holder{
+    width: 90%;
+    cursor: pointer;
+}
+.inner form{
+    width: 100%;
+    padding: 40px 0 30px;
+}
+input{
+    display: none;
+}
+}
+
+/* Existing styles */
+
+.form-group2-wrapper .form-group2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+}
+
+.form-group2-wrapper .date-input {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.form-group2-wrapper .file-upload {
+    display: flex;
+    align-items: center;
+}
+
+.form-button2 {
+    border: none;
+    width: 80px;
+    height: 21px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    background-color:lightgray;
+    font-size: 12px;; /* Example color used; replace with your desired button color */
+    /* Add any other necessary styling */
+
+/* Other styles */
+}
+.form-button2:hover {
+    background-color: lightpink; /* Example color used; replace with your desired button hover color */
+    /* Add any other necessary styling for hover state */
+}
+.birthdate-label{
+    color:rgb(148, 147, 147);
+    border: 1px solid #333;
+    border: none;
+    border-bottom: 1px solid #333;
+    font-size: 11px;
+    width:120%; 
+    height: 30px;
+    padding-right: 5px;
+    margin-right: 15px;
+    margin-bottom: 5px;
+    padding-bottom: 6px;
+    padding-left: 2px;
+}
+.cvLabel{
+    color:rgb(148, 147, 147);
+    border: 1px solid #333;
+    border: none;
+    border-bottom: 1px solid #333;
+    font-size: 11px;
+    margin-right: 12px;
+    padding-bottom: 6px;
+    
+}
+
+.questions-label {
+    position: fixed;
+    bottom: 140px; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+    z-index: 2;
+}
+/* .questions-label {
+    position: fixed; 
+    bottom: 20px;
+    right: 20px; 
+    color: #fff;
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+} */
+input[type="file"] {
+    display: none !important;
+}
+
